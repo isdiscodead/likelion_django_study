@@ -1,0 +1,25 @@
+/* base */
+* {
+    font-family: 'Cormorant', serif;
+}
+
+/* header & header */
+.header_div, .footer_div {
+    text-align: center;
+    margin : 1.5rem 0;
+}
+
+.almighty_logo {
+    font-family: 'Abril Fatface', cursive;
+}
+
+.home_link:link, .home_link:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.footer_button {
+    font-size: 0.6rem;
+}
+
+
