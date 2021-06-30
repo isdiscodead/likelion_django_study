@@ -3,4 +3,5 @@ from django.shortcuts import render
 
 
 def hello_world(request):
-    return HttpResponse('Hello world!')  # alt+enter로 import 가능
+    return render(request, 'base.html')
+    # alt+enter로 import 가능

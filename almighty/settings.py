@@ -84,7 +84,7 @@ ROOT_URLCONF = 'almighty.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # 템플릿 폴더 경로 추가
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
