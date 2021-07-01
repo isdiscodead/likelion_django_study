@@ -5,6 +5,12 @@
 
     <div style="height: 30rem; background-color: #548f00; border-radius: 1rem; margin: 2rem; padding: 1rem;">
         <h2>testing</h2>
+
+        <form action="/account/hello_world/" method="POST">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-warning" value="POST">
+            {{ text }}
+        </form>
     </div>
 
 {% endblock %}
