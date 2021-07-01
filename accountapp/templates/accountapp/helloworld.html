@@ -8,8 +8,15 @@
 
         <form action="/account/hello_world/" method="POST">
             {% csrf_token %}
-            <input type="submit" class="btn btn-warning" value="POST">
-            {{ text }}
+            <div>
+                <input type="text" name="hello_world_input">
+            </div>
+            <div>
+                <input type="submit" class="btn btn-warning" value="POST">
+            </div>
+            {% if hello_world_output %}
+                {{ hello_world_output.text }}
+            {% endif %}
         </form>
     </div>
 
