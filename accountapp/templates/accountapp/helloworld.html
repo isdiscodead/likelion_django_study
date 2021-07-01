@@ -3,7 +3,7 @@
 <!-- content block 내부의 내용을 작성 -->
 {% block content %}
 
-    <div style="height: 30rem; background-color: #548f00; border-radius: 1rem; margin: 2rem; padding: 1rem;">
+    <div style="text-align: center; background-color: #548f00; border-radius: 1rem; margin: 2rem; padding: 1rem;">
         <h2>testing</h2>
 
         <form action="/account/hello_world/" method="POST">
@@ -18,6 +18,16 @@
                 {{ hello_world_output.text }}
             {% endif %}
         </form>
+        <hr>
+        {% if hello_world_list %}
+            {% for hello_world in hello_world_list %}
+                <div>
+                {{ hello_world.text }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+
     </div>
 
 {% endblock %}
