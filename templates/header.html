@@ -1,6 +1,6 @@
     <div class="header_div">
         <div>
-            <a href="" class="home_link">
+            <a href="{% url 'accountapp:hello_world' %}" class="home_link">
                 <h1 class="almighty_logo">✨ Almighty Life ✨</h1>
             </a>
         </div>
@@ -9,7 +9,15 @@
             <span>nav2</span>
             <span>nav3</span>
             <span>nav4</span>
-            <span>nav5</span>
+            {% if not user.is_authenticated %}
+                <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+                    <span>login</span>
+                </a>
+            {% else %}
+                <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+                    <span>logout</span>
+                </a>
+            {% endif %}
         </div>
     </div>
     <hr>
