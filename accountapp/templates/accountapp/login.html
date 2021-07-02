@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 
 {% block content %}
 
 <div>
-    <div>
-        <h4>login</h4>
-    </div>
-    <div>
+    <div class="account_form_div">
+        <div style="margin: 0.5rem;">
+            <h3><strong>Login</strong></h3>
+            <hr>
+        </div>
         <form action="" method="post">
             {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="login" class="btn btn-default">
+            {% bootstrap_form form %}
+            <input type="submit" value="login" class="btn btn-warning">
         </form>
     </div>
 </div>
