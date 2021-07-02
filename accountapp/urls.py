@@ -14,12 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from accountapp.views import hello_world
+from accountapp.views import hello_world, AccountCreateView
 
 # 앱 이름 명시하기
 app_name = "accountapp"
 
 urlpatterns = [
     path('hello_world/', hello_world, name='hello_world'),
-
+    path('create/', AccountCreateView.as_view(), name='create'),
 ]

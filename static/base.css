@@ -4,7 +4,7 @@
 }
 
 /* header & header */
-.header_div, .footer_div {
+.header_div, .footer_div, .content_div{
     text-align: center;
     margin : 1.5rem 0;
 }
