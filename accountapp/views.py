@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render  # alt+enter로 import 가능
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, DetailView, UpdateView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 from accountapp.forms import AccountUpdateForm
 from accountapp.models import HelloWorld
@@ -45,3 +45,8 @@ class AccountUpdateView(UpdateView):
     form_class = AccountUpdateForm
     success_url = reverse_lazy("accountapp:hello_world")  # reverse_lazy -> 클래스형, reverse -> 함수형
     template_name = 'accountapp/update.html'
+
+class AccountDeleteView(DeleteView):
+    model = User
+    success_url = reverse_lazy("accountapp:hello_world")
+    template_name = 'accountapp/delete.html'

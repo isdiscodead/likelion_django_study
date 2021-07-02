@@ -11,6 +11,9 @@
         {% if target_user == user %}
             <a href="{% url 'accountapp:update' pk=user.pk %}">
                 change info
+            </a><br>
+            <a href="{% url 'accountapp:delete' pk=user.pk %}">
+                quit
             </a>
         {% endif %}
     </div>
