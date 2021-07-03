@@ -9,7 +9,7 @@
             <h3><strong>Quit</strong></h3>
             <hr>
         </div>
-        <form action="{% url 'accountapp:delete' pk=user.pk %}" method="post">
+        <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">
             {% csrf_token %}
             <p>⚠️ 회원 탈퇴는 곧바로 진행됩니다. 주의하세요! </p>
             <input type="submit" value="quit" class="btn btn-danger">

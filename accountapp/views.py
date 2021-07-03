@@ -42,11 +42,13 @@ class AccountDetailView(DetailView):
 class AccountUpdateView(UpdateView):
     # 파라미터가 create와 거의 동일하다
     model = User
+    context_object_name = 'target_user'
     form_class = AccountUpdateForm
     success_url = reverse_lazy("accountapp:hello_world")  # reverse_lazy -> 클래스형, reverse -> 함수형
     template_name = 'accountapp/update.html'
 
 class AccountDeleteView(DeleteView):
     model = User
+    context_object_name = 'target_user'
     success_url = reverse_lazy("accountapp:hello_world")
     template_name = 'accountapp/delete.html'
