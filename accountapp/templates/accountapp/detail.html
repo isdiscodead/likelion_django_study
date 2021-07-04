@@ -2,9 +2,14 @@
 
 {% block content %}
     <div class="account_form_div">
-        <div>
-            <h2>{{ target_user.username }}</h2>
-        </div>
+        {% if target_user.profile %}
+            <div>
+                <h2>{{ target_user.profile.nickname }}</h2>
+            </div>
+        {% else %}
+            <h3><a href="{% url 'profileapp:create' %}">Create Profile</a></h3>
+        {% endif %}
+
         <div>
             <p>{{ target_user.date_joined }}</p>
         </div>
@@ -17,4 +22,4 @@
             </a>
         {% endif %}
     </div>
-{% endblock%}
+{% endblock %}

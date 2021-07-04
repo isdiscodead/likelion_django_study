@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class="account_form_div">
+        <div>
+            <h3><strong>Create Profile</strong></h3>
+            <hr>
+        </div>
+        <form action="{% url 'profileapp:create' %}" method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input type="submit" class="btn btn-warning" value="apply">
+        </form>
+    </div>
+{% endblock %}
