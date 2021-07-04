@@ -56,6 +56,9 @@ class AccountUpdateView(UpdateView):  # 파라미터가 create와 거의 동일�
     success_url = reverse_lazy("accountapp:hello_world")  # reverse_lazy -> 클래스형, reverse -> 함수형
     template_name = 'accountapp/update.html'
 
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})
+
 
 @method_decorator(has_ownership, 'get')
 @method_decorator(has_ownership, 'post')
