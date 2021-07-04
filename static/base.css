@@ -30,3 +30,10 @@
     max-width: 40%;
     margin: 4rem auto;
 }
+
+/* profile */
+.profile_img {
+    height: 12rem;
+    width: 12rem;
+    border-radius:20rem;
+}
