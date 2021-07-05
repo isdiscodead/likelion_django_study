@@ -19,48 +19,22 @@
 }
 
 </style>
+  {% if article_List %}
+    <div class="container">
+      {% for article in article_List %}
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+          {% include 'snippets/card.html' with article=article %}
+        </a>
+      {% endfor %}
+    </div>
+    <script src="{% static 'js/magicgrid.js' %}"></script>
+  {% else %}
+    <div class="footer_div">
+      <h3>No Articles Yet!</h3>
+    </div>
+  {% endif %}
 
-  <div class="container">
-    <div class="item1">
-      <img src="https://picsum.photos/280/450" alt="random img">
-    </div>
-    <div class="item2">
-      <img src="https://picsum.photos/280/300" alt="random img">
-    </div>
-    <div class="item3">
-      <img src="https://picsum.photos/280/200" alt="random img">
-    </div>
-    <div class="item4">
-      <img src="https://picsum.photos/280/500" alt="random img">
-    </div>
-    <div class="item5">
-      <img src="https://picsum.photos/280/230" alt="random img">
-    </div>
-    <div class="item6">
-      <img src="https://picsum.photos/280/530" alt="random img">
-    </div>
-    <div class="item7">
-      <img src="https://picsum.photos/280/440" alt="random img">
-    </div>
-    <div class="item8">
-      <img src="https://picsum.photos/280/320" alt="random img">
-    </div>
-    <div class="item9">
-      <img src="https://picsum.photos/280/180" alt="random img">
-    </div>
-    <div class="item10">
-      <img src="https://picsum.photos/280/290" alt="random img">
-    </div>
-    <div class="item11">
-      <img src="https://picsum.photos/280/345" alt="random img">
-    </div>
-    <div class="item12">
-      <img src="https://picsum.photos/280/390" alt="random img">
-    </div>
-    <div class="item13">
-      <img src="https://picsum.photos/280/230" alt="random img">
-    </div>
-  </div>
+  {% include 'snippets/pagination.html' with page_obj=page_obj %}
 
   <div class="footer_div">
       <a href="{% url 'articleapp:create' %}" class="btn btn-warning">
@@ -69,6 +43,7 @@
   </div>
 
 
-  <script src="{% static 'js/magicgrid.js' %}"></script>
+
+
 
 {% endblock %}

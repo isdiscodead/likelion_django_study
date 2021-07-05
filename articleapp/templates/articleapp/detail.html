@@ -2,18 +2,33 @@
 
 {% block content %}
     <div class="account_form_div">
-        <h1>{{ target_article.title }}</h1>
+        <h3 style="padding-bottom: 2rem;">{{ target_article.title }}</h3>
 
-        <img src="{{ target_article.img.url }}" alt="{{ target_article.title }}" style="width: 100%;">
+        <h5><div style="display: flex; justify-content: space-between;">
+            {% if target_article.writer.profile.nickname %}
+                <span>writer : {{ target_article.writer.profile.nickname }}</span>
+                {% if target_article.writer == user %}
+                    <span style="">
+                        <a href="{% url 'articleapp:update' pk=target_article.pk %}">
+                            Update
+                        </a>&nbsp&nbsp
+                        <a href="{% url 'articleapp:delete' pk=target_article.pk %}">
+                            Delete
+                        </a>
+                    </span>
+                {% endif %}
+            {% else %}
+                <span>writer : unknown</span>
+            {% endif %}
+        </div></h5>
 
-        <h4>
+        <hr>
+
+        <img src="{{ target_article.img.url }}" alt="{{ target_article.title }}" style="width: 100%; border-radius: 1rem; margin: 2rem 0;">
+
+        <h5>
             {{ target_article.content }}
-        </h4>
-        <a href="{% url 'articleapp:update' pk=target_article.pk %}">
-            <p>Update</p>
-        </a>
-        <a href="{% url 'articleapp:delete' pk=target_article.pk %}">
-            <p>Delete</p>
-        </a>
+        </h5>
+        <hr>
     </div>
 {% endblock %}
