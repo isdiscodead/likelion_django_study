@@ -1,0 +1,21 @@
+{% load bootstrap4 %}
+
+{% block content %}
+    <div>
+        <div>
+            <h3><strong>Add Comment</strong></h3>
+            <hr>
+        </div>
+        <form action="{% url 'commentapp:create' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            {% if user.is_authenticated %}
+            <input type="submit" class="btn btn-warning" value="add">
+            {% else %}
+            <a href="{% url 'accountapp:login' %}?next={{ request.path }}">login to add comment</a>
+            {% endif %}
+            <input type="hidden" name="article_pk" value="{{ article.pk }}">
+        </form>
+    </div>
+{% endblock %}

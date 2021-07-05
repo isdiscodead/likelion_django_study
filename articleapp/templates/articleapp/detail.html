@@ -23,12 +23,12 @@
         </div></h5>
 
         <hr>
-
         <img src="{{ target_article.img.url }}" alt="{{ target_article.title }}" style="width: 100%; border-radius: 1rem; margin: 2rem 0;">
-
         <h5>
             {{ target_article.content }}
         </h5>
         <hr>
+
+        {% include 'commentapp/create.html' with article=target_article %}
     </div>
 {% endblock %}
