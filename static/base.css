@@ -37,3 +37,16 @@
     width: 12rem;
     border-radius:20rem;
 }
+
+.comment_div {
+    border: 1px solid;
+    border-color: #C9CCD4;
+    border-radius: 1rem;
+    text-align: left;
+    padding: 4%;
+    margin: 1rem;
+}
+
+.comment_content {
+    margin: 1rem 0;
+}

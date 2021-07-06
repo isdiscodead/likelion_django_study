@@ -2,10 +2,6 @@
 
 {% block content %}
     <div>
-        <div>
-            <h3><strong>Add Comment</strong></h3>
-            <hr>
-        </div>
         <form action="{% url 'commentapp:create' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% bootstrap_form form %}

@@ -1,0 +1,11 @@
+<div style="display:flex; justify-content: space-between;">
+  <span><strong>{{ comment.writer.profile.nickname }}</strong>
+  &nbsp &nbsp {{ comment.created_at }}</span>
+
+  {% if comment.writer == user %}
+    <span><a href="{% url 'commentapp:delete' pk=comment.pk %}">delete</a></span>
+  {% endif %}
+</div>
+<div class="comment_content">
+  {{ comment.content }}
+</div>
