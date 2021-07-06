@@ -69,4 +69,3 @@ class ArticleListView(ListView):
     context_object_name = 'article_List'
     template_name = 'articleapp/list.html'
     paginate_by = 8
-    paginate_orphans = 5

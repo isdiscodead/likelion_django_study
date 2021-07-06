@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="list_div">
     <div class="account_form_div">
         <img src="{{ target_project.image.url }}" alt="{{ target_project.title }}" class="profile_img">
         <h2>{{ target_project.title }}</h2>
         <h5>{{ target_project.description }}</h5>
     </div>
+
+    <hr>
+</div>
+
+<div>
+    {% include 'snippets/list_fragment.html' with article_List=object_list %}
+</div>
 {% endblock %}

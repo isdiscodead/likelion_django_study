@@ -56,6 +56,14 @@
     margin: 1rem 0;
 }
 
+.list_div {
+    text-align: center;
+    width: 80%;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+
 @media screen and (max-width:500px) {   /* 스크린 사이즈 500 이하일 때 적용 */
      html {
         font-size: 12px;
