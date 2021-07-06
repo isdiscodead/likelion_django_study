@@ -1,12 +1,16 @@
 /* base */
 * {
-    font-family: 'Cormorant', 'Noto Serif KR', serif;
+    font-family: 'MaruBuri-Regular', 'Noto Serif KR', serif;
 }
 
 /* header & header */
 .header_div, .footer_div {
     text-align: center;
     margin : 1.5rem 0;
+}
+
+.header_nav:hover{
+    color: orange;
 }
 
 .almighty_logo {
@@ -36,6 +40,7 @@
     height: 10rem;
     width: 10rem;
     border-radius:15rem;
+    object-fit: cover;
 }
 
 .comment_div {
