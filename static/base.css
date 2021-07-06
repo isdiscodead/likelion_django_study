@@ -27,15 +27,15 @@
 /* form */
 .account_form_div {
     text-align: center;
-    max-width: 40%;
+    max-width: 50%;
     margin: 4rem auto;
 }
 
 /* profile */
 .profile_img {
-    height: 12rem;
-    width: 12rem;
-    border-radius:20rem;
+    height: 10rem;
+    width: 10rem;
+    border-radius:15rem;
 }
 
 .comment_div {
@@ -49,4 +49,10 @@
 
 .comment_content {
     margin: 1rem 0;
+}
+
+@media screen and (max-width:500px) {   /* 스크린 사이즈 500 이하일 때 적용 */
+     html {
+        font-size: 12px;
+     }
 }
