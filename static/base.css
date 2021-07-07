@@ -1,6 +1,11 @@
 /* base */
 * {
     font-family: 'MaruBuri-Regular', 'Noto Serif KR', serif;
+
+}
+
+a {
+    text-decoration: none;
 }
 
 /* header & header */
