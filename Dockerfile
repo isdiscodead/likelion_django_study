@@ -3,7 +3,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "testgitdd3554"
+RUN echo "testing..."
 
 RUN git clone https://github.com/isdiscodead/likelion_django_study.git
 
@@ -13,6 +13,8 @@ WORKDIR /home/likelion_django_study/
 RUN pip install -r requirements.txt
 
 RUN pip install gunicorn
+
+RUN pip install mysqlclient
 
 # 환경 변수 가져오기
 RUN echo "SECRET_KEY=django-insecure-me&5g=_kl*c1okm22^&(=j02)i6&2tuhpu!au8%oi3b3+fwoxz" > .env
@@ -25,4 +27,4 @@ RUN python manage.py collectstatic
 
 EXPOSE 8000
 
-CMD ["gunicorn", "almighty.wsgi", "--bind", "0.0.0.0:8000"]
+CMD ["bash", "-c", "python manage.py migrate --settings=almigthy.settings.deploy && --env DJANGO_SETTINGS_MODULE=almigthy.settings.deploy  gunicorn almighty.wsgi --bind 0.0.0.0:8000"]
