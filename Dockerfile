@@ -3,7 +3,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "testing...2"
+RUN echo "testing...4"
 
 RUN git clone https://github.com/isdiscodead/likelion_django_study.git
 
@@ -13,6 +13,8 @@ WORKDIR /home/likelion_django_study/
 RUN pip install -r requirements.txt
 
 RUN pip install gunicorn
+
+RUN pip install psycopg2
 
 RUN pip install mysqlclient
 
@@ -27,4 +29,4 @@ RUN python manage.py collectstatic
 
 EXPOSE 8000
 
-CMD ["bash", "-c", "python manage.py migrate --settings=almigthy.settings.deploy && --env DJANGO_SETTINGS_MODULE=almigthy.settings.deploy  gunicorn almighty.wsgi --bind 0.0.0.0:8000"]
+CMD ["bash", "-c", "python manage.py migrate --settings=almighty.settings.deploy && --env DJANGO_SETTINGS_MODULE=almighty.settings.deploy  gunicorn almighty.wsgi --bind 0.0.0.0:8000"]
