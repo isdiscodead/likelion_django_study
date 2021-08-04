@@ -17,11 +17,11 @@ RUN pip install gunicorn
 # 환경 변수 가져오기
 RUN echo "SECRET_KEY=django-insecure-me&5g=_kl*c1okm22^&(=j02)i6&2tuhpu!au8%oi3b3+fwoxz" > .env
 
-# static
-RUN python manage.py collectstatic
-
 # db 연동
 RUN python manage.py migrate
+
+# static
+RUN python manage.py collectstatic
 
 EXPOSE 8000
 
