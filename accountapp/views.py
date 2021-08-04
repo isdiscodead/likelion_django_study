@@ -39,7 +39,7 @@ class AccountCreateView(CreateView):
     # CreateView에 필요한 주요 파라미터 지정
     model = User  # 장고 기본 Model, AbstractUser 클래스 이용 필드 추가 가능
     form_class = UserCreationForm
-    success_url = reverse_lazy("accountapp:hello_world")  # reverse_lazy -> 클래스형, reverse -> 함수형
+    success_url = reverse_lazy("home")  # reverse_lazy -> 클래스형, reverse -> 함수형
     template_name = 'accountapp/create.html'
 
 
