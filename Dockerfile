@@ -3,7 +3,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "testing...4"
+RUN echo "testing...2"
 
 RUN git clone https://github.com/isdiscodead/likelion_django_study.git
 
@@ -29,4 +29,4 @@ RUN python manage.py collectstatic
 
 EXPOSE 8000
 
-CMD ["bash", "-c", "python manage.py migrate --settings=almighty.settings.deploy && --env DJANGO_SETTINGS_MODULE=almighty.settings.deploy  gunicorn almighty.wsgi --bind 0.0.0.0:8000"]
+CMD ["bash", "-c", "python manage.py migrate --settings=almighty.settings.deploy && gunicorn almighty.wsgi --env DJANGO_SETTINGS_MODULE=almighty.settings.deploy --bind 0.0.0.0:8000"]
