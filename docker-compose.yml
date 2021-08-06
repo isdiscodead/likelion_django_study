@@ -13,7 +13,7 @@ services:
       - 80:80
 
   django_container_gunicorn:
-    image: django_test_image:1
+    image: django_test_image:5
     networks:
       - network
     volumes:
@@ -36,7 +36,7 @@ services:
       MYSQL_USER: django
       MYSQL_DATABASE: django
       MYSQL_PASSWORD_FILE: /run/secrets/MYSQL_PASSWORD
-      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/MARIADB_ROOT_PASSWORD
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/MYSQL_ROOT_PASSWORD
 
 
 networks:

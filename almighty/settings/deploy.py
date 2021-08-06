@@ -3,7 +3,7 @@ from .base import *
 
 ### 환경 변수 설정 ###
 def read_secret(secret_name):
-    file = open('/run/secrets/' + secret_name )
+    file = open('/run/secrets/' + secret_name)
     secret = file.read()
     secret = secret.rstrip().lstrip()
     file.close()
