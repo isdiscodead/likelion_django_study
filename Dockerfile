@@ -3,7 +3,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "testing...2"
+RUN echo "test"
 
 RUN git clone https://github.com/isdiscodead/likelion_django_study.git
 
@@ -17,9 +17,6 @@ RUN pip install gunicorn
 RUN pip install psycopg2
 
 RUN pip install mysqlclient
-
-# 환경 변수 가져오기
-RUN echo "SECRET_KEY=django-insecure-me&5g=_kl*c1okm22^&(=j02)i6&2tuhpu!au8%oi3b3+fwoxz" > .env
 
 # db 연동
 RUN python manage.py migrate
