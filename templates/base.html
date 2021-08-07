@@ -6,6 +6,15 @@
 <body style="font-family:'MaruBuri-Regular'">
     {% include 'header.html' %}
 
+    {% for message in messages %}
+    <div class="text-center">
+        <div class="btn btn-{{ message.tags }} rounded-pill px-5 my03">
+            {{ message }}
+        </div>
+    </div>
+
+    {% endfor %}
+
     {% block content %}
     {% endblock %}
 

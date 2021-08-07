@@ -3,6 +3,16 @@
 {% block content %}
     <div class="account_form_div">
         <h3 style="padding-bottom: 2rem;">{{ target_article.title }}</h3>
+        <div style="height: 2rem;">
+            <a href="{% url 'likeapp:article_like' pk=target_article.pk %}">
+                <i style="vertical-align: middle; font-size: 1.2rem; color: #f77" class="material-icons">
+                    favorite
+                </i>
+                <span style="vertical-align: middle; font-size: 1.2rem;">
+                {{ target_article.like }}
+            </span>
+            </a>
+        </div>
 
         <h5><div style="display: flex; justify-content: space-between;">
             {% if target_article.writer.profile.nickname %}
